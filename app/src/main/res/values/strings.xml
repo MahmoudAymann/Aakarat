@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name" translatable="false">Aakarat</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">forgot password?</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="skip_now">Skip Now</string>
+    <string name="signin">Sign In</string>
+    <string name="mobile">Mobile</string>
+    <string name="name">Name</string>
+    <string name="signup">Sign Up</string>
+    <string name="code">Code</string>
+
+</resources>
