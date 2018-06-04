@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer-array name="countries_images">
-        <item>@string/code</item>
+        <item>@string/code_spinner</item>
         <item>@drawable/ic_egypt_round_icon_64dp</item>
         <item>@drawable/ic_saudi_arabia_round_icon_64dp</item>
         <item>@drawable/ic_qatar_round_icon_64dp</item>

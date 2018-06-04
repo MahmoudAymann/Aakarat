@@ -1,4 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Aakarat</string>
+    <string name="app_name" translatable="false">Aakarat</string>
+    <string name="forgot_password">نسيت كلمة السر؟</string>
+    <string name="login">الدخول</string>
+    <string name="register">إنشاء حساب</string>
+    <string name="skip_now">تخطى الأن</string>
+    <string name="signin">تسجيل الدخول</string>
+    <string name="mobile">رقم الهاتف</string>
+    <string name="name">الاسم</string>
+    <string name="signup">تسجيل جديد</string>
+    <string name="code">ادخل الكود هنا</string>
+    <string name="resend_code">اعادة الارسال؟</string>
+    <string name="submit">تأكيد</string>
+    <string name="verfication_code">كود التحقق</string>
+    <string name="code_spinner">الكود</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="privacy_policy">الشروط والأحكام</string>
+    <string name="about">عن التطبيق</string>
+    <string name="who_us">من نحن</string>
+    <string name="change_language">تغيير اللغة</string>
+    <string name="my_favourite">مفضلتى</string>
+    <string name="request_a_building">طلب عقار</string>
+    <string name="offer_a_building">عرض عقار</string>
+    <string name="profile">الحساب الشخصى</string>
+    <string name="no">لا</string>
+    <string name="yes">نعم</string>
+    <string name="change_language_prompt">هل انت متأكد من تغيير اللغة؟</string>
+    <string name="apartment">شقة</string>
+    <string name="home">القائمة الرئيسية</string>
+    <string name="house">منزل</string>
+    <string name="villa">فيلا</string>
+    <string name="resturant">مطعم</string>
+    <string name="warehouse">مستودع</string>
+    <string name="farms">مزارع</string>
+    <string name="password">كلمة المرور</string>
+    <string name="email">الايميل</string>
 </resources>

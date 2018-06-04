@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.spectraapps.aakarat.R;
-import com.spectraapps.aakarat.model.PhoneSpinnerModel;
+import com.spectraapps.aakarat.model.spinners.PhoneSpinnerModel;
 
 import java.util.List;
 

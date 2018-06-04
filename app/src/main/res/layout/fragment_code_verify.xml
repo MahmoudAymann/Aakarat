@@ -1,14 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.login.CodeVerifyFragment">
+    android:orientation="vertical"
+    tools:context=".fragments.login.CodeVerifyFragment"
+    android:background="@drawable/app_background">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dim_16dp">
 
-</FrameLayout>
+        <RelativeLayout
+            android:id="@+id/parent_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dim_8dp">
+
+            <TextView
+                android:id="@+id/tv_static"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/verfication_code"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <EditText
+                android:id="@+id/codeET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_static"
+                android:layout_marginBottom="@dimen/dim_2dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="@dimen/dim_16dp"
+                android:background="@drawable/bg_edit_text"
+                android:gravity="center"
+                android:hint="@string/code"
+                android:inputType="number"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+            <TextView
+                android:id="@+id/resendTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/codeET"
+                android:layout_marginStart="50dp"
+                android:text="@string/resend_code"
+                android:layout_marginTop="@dimen/dim_8dp"/>
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/resendTV"
+                android:layout_marginEnd="@dimen/dim_16dp"
+                android:layout_marginStart="@dimen/dim_16dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/bg_round_rect"
+                android:text="@string/submit"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

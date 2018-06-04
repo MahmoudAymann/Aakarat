@@ -14,9 +14,10 @@ import android.view.ViewGroup;
 import com.spectraapps.aakarat.MainActivity;
 import com.spectraapps.aakarat.R;
 import com.spectraapps.aakarat.adapter.HomeAdapter;
+import com.spectraapps.aakarat.adapter.ProductsAdapter;
 import com.spectraapps.aakarat.helper.BaseBackPressedListener;
 import com.spectraapps.aakarat.interfaces.MainViewsCallBack;
-import com.spectraapps.aakarat.model.HomeModel;
+import com.spectraapps.aakarat.model.ProductsModel;
 
 import java.util.ArrayList;
 
@@ -25,16 +26,15 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 
-public class HomeFragment extends Fragment {
-
+public class ProductsFragment extends Fragment {
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
-    HomeAdapter homeAdapter;
-    ArrayList<HomeModel> mDataList;
+    ProductsAdapter productsAdapter;
+    ArrayList<ProductsModel> mDataList;
     Unbinder unbinder;
     private MainViewsCallBack mMainViewsCallBack;
 
-    public HomeFragment() {
+    public ProductsFragment() {
         // Required empty public constructor
     }
 
@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_products, container, false);
         unbinder = ButterKnife.bind(this,rootView);
         initUI(rootView);
 
@@ -56,33 +56,31 @@ public class HomeFragment extends Fragment {
     }
     private void initRecyclerView() {
         if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+            recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
         } else {
-            recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+            recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
         }
     }
 
     private void initAdapter() {
         mDataList = new ArrayList<>() ;
-       // Integer[] images = {R.drawable.place_holder};
-        String[] names = {getString(R.string.apartment), getString(R.string.villa), getString(R.string.house),
-                getString(R.string.resturant), getString(R.string.warehouse), getString(R.string.farms)};
-        for (int i = 0; i < names.length; i++) {
-            HomeModel th = new HomeModel(names[i]);
+        // Integer[] images = {R.drawable.place_holder};
+
+        for (int i = 0; i < 6; i++) {
+            ProductsModel th = new ProductsModel();
             mDataList.add(i, th);
         }
 
-        homeAdapter = new HomeAdapter(getActivity().getApplicationContext(), mDataList,
-                new HomeAdapter.ListAllListeners() {
+        productsAdapter = new ProductsAdapter(getActivity().getApplicationContext(), mDataList,
+                new ProductsAdapter.ListAllListeners() {
                     @Override
-                    public void onItemViewClick(HomeModel homeModel, int adapterPosition) {
-                                getFragmentManager().beginTransaction()
-                                        .replace(R.id.main_frameLayout,new ProductsFragment()).commit();
+                    public void onItemViewClick(ProductsModel productsModel, int adapterPosition) {
+//                        getFragmentManager().beginTransaction().replace(R.id.main_frameLayout,new ProductsFragment()).commit();
                     }
-
                 });
-        recyclerView.setAdapter(homeAdapter);
-        homeAdapter.notifyDataSetChanged();
+
+        recyclerView.setAdapter(productsAdapter);
+        productsAdapter.notifyDataSetChanged();
     }
     @Override
     public void onAttach(Activity context) {

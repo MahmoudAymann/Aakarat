@@ -1,9 +1,9 @@
 package com.spectraapps.aakarat.fragments.login;
 
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.res.TypedArray;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +11,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import com.spectraapps.aakarat.LoginActivity;
 import com.spectraapps.aakarat.R;
 import com.spectraapps.aakarat.adapter.PhoneAdapter;
-import com.spectraapps.aakarat.model.PhoneSpinnerModel;
+import com.spectraapps.aakarat.helper.BaseBackPressedListener;
+import com.spectraapps.aakarat.model.spinners.PhoneSpinnerModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +69,7 @@ public class RegisterFragment extends Fragment {
             rowItems.add(item);
         }
         spinner = rootView.findViewById(R.id.phoneCountry_spinner);
-        spinner.getBackground().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_ATOP);
+        //spinner.getBackground().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
         PhoneAdapter adapter = new PhoneAdapter(getActivity().getApplicationContext(),
                 R.layout.single_item_spinner_phone_countries, R.id.textView, rowItems);
         spinner.setAdapter(adapter);
@@ -81,12 +83,29 @@ public class RegisterFragment extends Fragment {
 
     @OnClick(R.id.signinBtn)
     protected void onSigninClick(){
-        getFragmentManager().beginTransaction().replace(R.id.login_frame,new LoginFragment()).commit();
+        getFragmentManager().beginTransaction()
+                .replace(R.id.login_frame,new LoginFragment()).commit();
     }
 
     @OnClick(R.id.registerBtn)
     protected void onRegisterClick(){
+        getFragmentManager().beginTransaction()
+                .replace(R.id.login_frame,new RegisterFragment()).commit();
+    }
 
-        getFragmentManager().beginTransaction().replace(R.id.login_frame,new RegisterFragment()).commit();
+    private void fireBackButtonEvent() {
+        ((LoginActivity) getActivity()).setOnBackPressedListener(new BaseBackPressedListener(getActivity()) {
+            @Override
+            public void onBackPressed() {
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.login_frame,new LoginFragment()).commit();
+            }
+        });
+    }//end back pressed
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        fireBackButtonEvent();
     }
 }

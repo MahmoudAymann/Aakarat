@@ -2,22 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorPrimary"
     android:orientation="horizontal">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_marginStart="5dp"
         android:layout_weight="1"
         android:gravity="center|start"
         android:textColor="@color/white" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+        android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="5dp" />
+        android:layout_marginStart="2dp" />
 
 </LinearLayout>
