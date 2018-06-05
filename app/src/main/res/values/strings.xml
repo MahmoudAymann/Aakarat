@@ -18,8 +18,8 @@
     <string name="submit">Submit</string>
     <string name="verfication_code">Verification Code</string>
     <string name="logoscreen" translatable="false">logoscreen</string>
-    <string name="splash_btn_ar">ع</string>
-    <string name="splash_btn_en">EN</string>
+    <string name="splash_btn_ar" translatable="false">ع</string>
+    <string name="splash_btn_en" translatable="false">EN</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
@@ -46,5 +46,27 @@
     <string name="resturant">Restaurant</string>
     <string name="warehouse">Warehouse</string>
     <string name="farms">Farms</string>
+    <string name="for_rent">For Rent</string>
+    <string name="for_sale">For Sale</string>
+    <string name="edit">Edit</string>
+    <string name="product_detail">Product Detail</string>
+    <string name="code_">Code:</string>
+    <string name="type_">Type:</string>
+    <string name="area_">Area:</string>
+    <string name="bedroom_">Bedroom:</string>
+    <string name="bathroom_">Bathroom:</string>
+    <string name="price_">Price:</string>
+    <string name="garage_">Garage:</string>
+    <string name="country_">Country:</string>
+    <string name="city_">City:</string>
+    <string name="distinct_">Distinct:</string>
+    <string name="address_">Address:</string>
+    <string name="order_now">Order Now</string>
+    <string name="address">Address</string>
+    <string name="area">Area</string>
+    <string name="price">Price</string>
+    <string name="map">Map</string>
+    <string name="description">Description</string>
+    <string name="agree_the_privacy_policy">agree the privacy policy</string>
 
 </resources>

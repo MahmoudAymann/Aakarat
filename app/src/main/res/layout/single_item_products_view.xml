@@ -20,17 +20,18 @@
             app:sriv_left_top_corner_radius="4dp"
             app:sriv_right_top_corner_radius="4dp"
             android:src="@drawable/place_holder"
-            android:scaleType="fitXY"
-            />
+            android:scaleType="fitXY" />
 
         <TextView
             android:id="@+id/typeTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="for sale"
+            android:text="@string/for_rent"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:background="@drawable/bg_type_tv"/>
+            android:background="@drawable/bg_type_rent_tv"
+            android:padding="@dimen/dim_2dp"
+            android:textSize="16sp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -104,8 +105,6 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentEnd="true"
-            android:layout_marginTop="@dimen/dim_2dp"
-            android:layout_marginEnd="@dimen/dim_2dp"
         app:srcCompat="@drawable/ic_favorite_on_24dp"
         tools:ignore="ContentDescription" />
     </RelativeLayout>

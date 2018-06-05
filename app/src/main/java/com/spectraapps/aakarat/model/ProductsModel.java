@@ -10,14 +10,40 @@ public class ProductsModel {
     private String measure;
     private String country;
     private String city;
+    private String currency;
+    private int image;
 
-    public ProductsModel(String type, String price, String measure, String country, String city, boolean fav) {
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
+    public ProductsModel(String type, boolean fav, String price, String measure, String country, String city, String currency, int image) {
         this.type = type;
         this.fav = fav;
         this.price = price;
         this.measure = measure;
         this.country = country;
         this.city = city;
+        this.currency = currency;
+        this.image = image;
+    }
+
+    public ProductsModel(String type, int image) {
+        this.type = type;
+        this.image = image;
+    }
+
+    public String getCurrency() {
+
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     public ProductsModel() {

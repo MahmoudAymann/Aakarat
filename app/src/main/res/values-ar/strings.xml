@@ -35,4 +35,6 @@
     <string name="farms">مزارع</string>
     <string name="password">كلمة المرور</string>
     <string name="email">الايميل</string>
+    <string name="for_rent">للإيجار</string>
+    <string name="for_sale">للبيع</string>
 </resources>

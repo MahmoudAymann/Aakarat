@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".fragments.main.ProfileFragment"
+    android:background="@drawable/app_background">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/dim_16dp"
+            android:layout_marginStart="@dimen/dim_16dp"
+            app:cardCornerRadius="@dimen/dim_8dp"
+            android:layout_marginTop="50dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="90dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/nameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/name"
+                    android:inputType="textPersonName"
+                    android:paddingEnd="@dimen/dim_8dp"
+                    android:paddingStart="@dimen/dim_8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textSize="20sp"
+                    tools:ignore="LabelFor" />
+
+                <EditText
+                    android:id="@+id/emailET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:paddingEnd="@dimen/dim_8dp"
+                    android:paddingStart="@dimen/dim_8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textSize="20sp"
+                    tools:ignore="LabelFor"
+                    android:layout_marginTop="@dimen/dim_8dp"/>
+
+                <EditText
+                    android:id="@+id/mobileET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/mobile"
+                    android:inputType="phone"
+                    android:paddingEnd="@dimen/dim_8dp"
+                    android:paddingStart="@dimen/dim_8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textSize="20sp"
+                    tools:ignore="LabelFor"
+                    android:layout_marginTop="@dimen/dim_8dp"/>
+
+                <EditText
+                    android:id="@+id/passwordET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:paddingEnd="@dimen/dim_8dp"
+                    android:paddingStart="@dimen/dim_8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textSize="20sp"
+                    tools:ignore="LabelFor"
+                    android:layout_marginTop="@dimen/dim_8dp"/>
+
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/bg_round_rect"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/dim_8dp"
+                    android:textColor="@color/white"
+                    android:text="@string/edit"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/place_holder"
+                app:layout_anchor="@id/cardView"
+                app:layout_anchorGravity="top|center"
+                android:elevation="@dimen/dim_2dp" />
+    </android.support.design.widget.CoordinatorLayout>
+</ScrollView>

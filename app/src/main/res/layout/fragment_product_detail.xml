@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:padding="1dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rel1"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:fitsSystemWindows="true">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true" />
+
+                    <me.relex.circleindicator.CircleIndicator
+                        android:id="@+id/indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="center"
+                        app:ci_drawable="@color/colorAccent"
+                        app:ci_drawable_unselected="@color/white" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rel1"
+                    android:layout_marginTop="@dimen/dim_16dp"
+                    android:layout_marginEnd="@dimen/dim_8dp"
+                    android:layout_marginStart="@dimen/dim_8dp">
+
+
+                    <TextView
+                        android:id="@+id/code_Stc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/code_"
+                        android:layout_marginEnd="@dimen/dim_8dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="@dimen/dim_8dp"/>
+
+                    <TextView
+                        android:id="@+id/codeTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1235"
+                        android:layout_toEndOf="@id/code_Stc"
+                        android:textSize="18sp"/>
+
+
+
+                    <TextView
+                        android:id="@+id/type_Stc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/type_"
+                        android:layout_marginEnd="@dimen/dim_8dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="@dimen/dim_8dp"
+                        android:layout_below="@id/code_Stc"/>
+
+                    <TextView
+                        android:id="@+id/typeTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="type"
+                        android:layout_toEndOf="@id/type_Stc"
+                        android:textSize="18sp"
+                        android:layout_below="@id/code_Stc"/>
+
+                    <TextView
+                        android:id="@+id/area_Stc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/area_"
+                        android:layout_marginEnd="@dimen/dim_8dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="@dimen/dim_8dp"
+                        android:layout_below="@id/type_Stc"/>
+
+                    <TextView
+                        android:id="@+id/areaTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1235 m2"
+                        android:layout_toEndOf="@id/area_Stc"
+                        android:textSize="18sp"
+                        android:layout_below="@id/type_Stc"/>
+
+                    <TextView
+                        android:id="@+id/bed_count_Stc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bedroom_"
+                        android:layout_marginEnd="@dimen/dim_8dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="@dimen/dim_8dp"
+                        android:layout_below="@id/area_Stc"/>
+
+                    <TextView
+                        android:id="@+id/bedroomTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2"
+                        android:layout_toEndOf="@id/bed_count_Stc"
+                        android:textSize="18sp"
+                        android:layout_below="@id/area_Stc"/>
+
+                    <TextView
+                        android:id="@+id/bathroom_Stc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bathroom_"
+                        android:layout_marginEnd="@dimen/dim_8dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="@dimen/dim_8dp"
+                        android:layout_below="@id/bed_count_Stc"/>
+
+                    <TextView
+                        android:id="@+id/bathroomTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5"
+                        android:layout_toEndOf="@id/bathroom_Stc"
+                        android:textSize="18sp"
+                        android:layout_below="@id/bed_count_Stc"/>
+
+                    <TextView
+                        android:id="@+id/price_Stc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/price_"
+                        android:layout_marginEnd="@dimen/dim_8dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="@dimen/dim_8dp"
+                        android:layout_below="@id/bathroom_Stc"/>
+
+                    <TextView
+                        android:id="@+id/priceTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1235 EG"
+                        android:layout_toEndOf="@id/price_Stc"
+                        android:textSize="18sp"
+                        android:layout_below="@id/bathroom_Stc"/>
+
+                    <TextView
+                        android:id="@+id/garage_Stc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/garage_"
+                        android:layout_marginEnd="@dimen/dim_8dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="@dimen/dim_8dp"
+                        android:layout_below="@id/price_Stc"/>
+
+                    <TextView
+                        android:id="@+id/garageTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1235"
+                        android:layout_toEndOf="@id/garage_Stc"
+                        android:textSize="18sp"
+                        android:layout_below="@id/price_Stc"/>
+
+                    <TextView
+                        android:id="@+id/country_Stc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/country_"
+                        android:layout_marginEnd="@dimen/dim_8dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="@dimen/dim_8dp"
+                        android:layout_below="@id/garage_Stc"/>
+
+                    <TextView
+                        android:id="@+id/countryTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="egypt"
+                        android:layout_toEndOf="@id/country_Stc"
+                        android:textSize="18sp"
+                        android:layout_below="@id/garage_Stc"/>
+
+                    <TextView
+                        android:id="@+id/city_Stc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/city_"
+                        android:layout_marginEnd="@dimen/dim_8dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="@dimen/dim_8dp"
+                        android:layout_below="@id/country_Stc"/>
+
+                    <TextView
+                        android:id="@+id/cityTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="cairo"
+                        android:layout_toEndOf="@id/city_Stc"
+                        android:textSize="18sp"
+                        android:layout_below="@id/country_Stc"/>
+
+                    <TextView
+                        android:id="@+id/distinct_Stc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/distinct_"
+                        android:layout_marginEnd="@dimen/dim_8dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="@dimen/dim_8dp"
+                        android:layout_below="@id/city_Stc"/>
+
+                    <TextView
+                        android:id="@+id/distinctTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="cairo"
+                        android:layout_toEndOf="@id/distinct_Stc"
+                        android:textSize="18sp"
+                        android:layout_below="@id/city_Stc"/>
+
+                    <TextView
+                        android:id="@+id/address_Stc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/address_"
+                        android:layout_marginEnd="@dimen/dim_8dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="@dimen/dim_8dp"
+                        android:layout_below="@id/distinct_Stc"/>
+
+                    <TextView
+                        android:id="@+id/addressTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7 street hassan radwan"
+                        android:layout_toEndOf="@id/address_Stc"
+                        android:textSize="18sp"
+                        android:layout_below="@id/distinct_Stc"/>
+
+                </RelativeLayout>
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_round_rect"
+                    android:textColor="@color/white"
+                    android:text="@string/order_now"
+                    android:layout_below="@id/rel2"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="@dimen/dim_8dp"/>
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+</ScrollView>

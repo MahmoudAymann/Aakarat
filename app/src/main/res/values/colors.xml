@@ -8,4 +8,6 @@
     <color name="black_trans">#70000000</color>
     <color name="grey_static">#BDBDBD</color>
     <color name="red">#d50000</color>
+    <color name="green">#00c853</color>
+
 </resources>

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.main.AddProductFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="@dimen/dim_8dp">
+
+        <LinearLayout
+            android:id="@+id/lin1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_edit_text"
+            android:paddingStart="@dimen/dim_2dp"
+            android:paddingEnd="@dimen/dim_2dp"
+            android:layout_marginBottom="@dimen/dim_8dp">
+
+            <Spinner
+                android:id="@+id/type_spinner"
+                style="@style/Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/white"
+                tools:ignore="UnusedAttribute" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_edit_text"
+            android:paddingStart="@dimen/dim_2dp"
+            android:paddingEnd="@dimen/dim_2dp"
+            android:layout_below="@id/lin1"
+            android:layout_marginBottom="@dimen/dim_8dp">
+
+            <Spinner
+                android:id="@+id/dept_spinner"
+                style="@style/Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/white"
+                tools:ignore="UnusedAttribute" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/lin3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_edit_text"
+            android:paddingStart="@dimen/dim_2dp"
+            android:paddingEnd="@dimen/dim_2dp"
+            android:layout_below="@id/lin2"
+            android:layout_marginBottom="@dimen/dim_8dp">
+
+            <Spinner
+                android:id="@+id/city_spinner"
+                style="@style/Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/white"
+                tools:ignore="UnusedAttribute" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/lin4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_edit_text"
+            android:paddingStart="@dimen/dim_2dp"
+            android:paddingEnd="@dimen/dim_2dp"
+            android:layout_below="@id/lin3"
+            android:layout_marginBottom="@dimen/dim_8dp">
+
+            <Spinner
+                android:id="@+id/distinct_spinner"
+                style="@style/Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/white"
+                tools:ignore="UnusedAttribute" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/addressET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edit_text"
+            android:layout_below="@id/lin4"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:text="@string/address"
+            android:paddingStart="@dimen/dim_8dp"
+            android:paddingEnd="@dimen/dim_8dp"
+            android:maxLines="1"
+            android:inputType="text"
+            android:layout_marginBottom="@dimen/dim_8dp"
+            tools:ignore="LabelFor" />
+
+        <LinearLayout
+            android:id="@+id/lin5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/addressET"
+            android:layout_marginBottom="@dimen/dim_8dp"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:id="@+id/lin51"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_edit_text"
+                android:paddingStart="@dimen/dim_2dp"
+                android:paddingEnd="@dimen/dim_2dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/dim_2dp">
+
+                <Spinner
+                    android:id="@+id/bedroom_spinner"
+                    style="@style/Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/white"
+                    tools:ignore="UnusedAttribute" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lin52"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_edit_text"
+                android:paddingStart="@dimen/dim_2dp"
+                android:paddingEnd="@dimen/dim_2dp"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/dim_2dp">
+
+                <Spinner
+                    android:id="@+id/bathroom_spinner"
+                    style="@style/Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/white"
+                    tools:ignore="UnusedAttribute" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/lin5"
+            android:layout_marginBottom="@dimen/dim_8dp"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:id="@+id/lin61"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_edit_text"
+                android:paddingStart="@dimen/dim_2dp"
+                android:paddingEnd="@dimen/dim_2dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/dim_2dp">
+
+                <Spinner
+                    android:id="@+id/garage_spinner"
+                    style="@style/Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/white"
+                    tools:ignore="UnusedAttribute" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/areaET"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edit_text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:text="@string/area"
+                android:paddingStart="@dimen/dim_8dp"
+                android:paddingEnd="@dimen/dim_8dp"
+                android:maxLines="1"
+                android:inputType="numberDecimal"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/dim_2dp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/lin6"
+            android:layout_marginBottom="@dimen/dim_8dp"
+            android:baselineAligned="false">
+
+            <EditText
+                android:id="@+id/priceET"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edit_text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:text="@string/price"
+                android:paddingStart="@dimen/dim_8dp"
+                android:paddingEnd="@dimen/dim_8dp"
+                android:maxLines="1"
+                android:inputType="numberDecimal"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/dim_2dp"
+                android:gravity="center"
+                tools:ignore="LabelFor" />
+
+            <EditText
+                android:id="@+id/mapET"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edit_text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:text="@string/map"
+                android:paddingStart="@dimen/dim_8dp"
+                android:paddingEnd="@dimen/dim_8dp"
+                android:maxLines="1"
+                android:inputType="text"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/dim_2dp"
+                android:gravity="center"
+                android:clickable="false"
+                android:focusable="false"
+                tools:ignore="LabelFor" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/descriptionET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edit_text"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:text="@string/description"
+            android:paddingStart="@dimen/dim_8dp"
+            android:paddingEnd="@dimen/dim_8dp"
+            android:inputType="textMultiLine"
+            android:layout_below="@id/lin7"
+            android:layout_marginBottom="@dimen/dim_8dp"
+            android:scrollbars="vertical"
+            tools:ignore="LabelFor" />
+
+        <LinearLayout
+            android:id="@+id/lin8"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="@dimen/dim_8dp"
+            android:layout_below="@id/descriptionET"
+            android:layout_marginEnd="@dimen/dim_8dp"
+            android:layout_marginStart="@dimen/dim_8dp">
+
+            <ImageView
+                android:id="@+id/img1_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/place_holder"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:layout_marginEnd="5dp"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/img2_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/place_holder"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/img3_item"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:src="@drawable/place_holder"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:layout_marginStart="5dp"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lin8"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/agree_the_privacy_policy"
+            android:layout_marginBottom="@dimen/dim_16dp"/>
+
+
+        <Button
+            android:id="@+id/submitBtn"
+            style="?buttonBarButtonStyle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_round_rect"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_below="@id/checkbox"
+            android:layout_marginBottom="@dimen/dim_8dp"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+
+</ScrollView>

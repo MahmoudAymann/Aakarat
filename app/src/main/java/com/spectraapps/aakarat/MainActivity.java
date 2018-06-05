@@ -3,6 +3,7 @@ package com.spectraapps.aakarat;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -19,8 +20,11 @@ import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.spectraapps.aakarat.fragments.main.AddProductFragment;
+import com.spectraapps.aakarat.fragments.main.FavouritesFragment;
 import com.spectraapps.aakarat.fragments.main.HomeFragment;
 import com.spectraapps.aakarat.fragments.main.ProductsFragment;
+import com.spectraapps.aakarat.fragments.main.RequestFragment;
 import com.spectraapps.aakarat.interfaces.IOnBackPressed;
 import com.spectraapps.aakarat.interfaces.MainViewsCallBack;
 import com.spectraapps.aakarat.util.ListSharedPreference;
@@ -125,7 +129,6 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -135,11 +138,17 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_profile) {
 
         } else if (id == R.id.nav_myfavourite) {
-
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.main_frameLayout,new FavouritesFragment())
+                    .commit();
         } else if (id == R.id.nav_request) {
-
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.main_frameLayout,new RequestFragment())
+                    .commit();
         } else if (id == R.id.nav_offer) {
-
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.main_frameLayout,new AddProductFragment())
+                    .commit();
         } else if (id == R.id.language_nav) {
             setAlertDialog(1);
             AlertDialog alertDialog = alertDialogBuilder.create();
@@ -151,7 +160,8 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.nav_privacy_policy) {
 
         }else if (id == R.id.logout_nav) {
-
+            Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

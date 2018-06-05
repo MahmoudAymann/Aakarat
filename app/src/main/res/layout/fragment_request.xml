@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.main.AddProductFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="@dimen/dim_8dp">
+
+        <LinearLayout
+            android:id="@+id/lin1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dim_8dp"
+            android:background="@drawable/bg_edit_text"
+            android:paddingEnd="@dimen/dim_2dp"
+            android:paddingStart="@dimen/dim_2dp">
+
+            <Spinner
+                android:id="@+id/type_spinner"
+                style="@style/Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/white"
+                tools:ignore="UnusedAttribute" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/lin1"
+            android:layout_marginBottom="@dimen/dim_8dp"
+            android:background="@drawable/bg_edit_text"
+            android:paddingEnd="@dimen/dim_2dp"
+            android:paddingStart="@dimen/dim_2dp">
+
+            <Spinner
+                android:id="@+id/dept_spinner"
+                style="@style/Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/white"
+                tools:ignore="UnusedAttribute" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/lin3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/lin2"
+            android:layout_marginBottom="@dimen/dim_8dp"
+            android:background="@drawable/bg_edit_text"
+            android:paddingEnd="@dimen/dim_2dp"
+            android:paddingStart="@dimen/dim_2dp">
+
+            <Spinner
+                android:id="@+id/city_spinner"
+                style="@style/Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/white"
+                tools:ignore="UnusedAttribute" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/lin4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/lin3"
+            android:layout_marginBottom="@dimen/dim_8dp"
+            android:background="@drawable/bg_edit_text"
+            android:paddingEnd="@dimen/dim_2dp"
+            android:paddingStart="@dimen/dim_2dp">
+
+            <Spinner
+                android:id="@+id/distinct_spinner"
+                style="@style/Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/white"
+                tools:ignore="UnusedAttribute" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/addressET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lin4"
+            android:layout_marginBottom="@dimen/dim_8dp"
+            android:background="@drawable/bg_edit_text"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingEnd="@dimen/dim_8dp"
+            android:paddingStart="@dimen/dim_8dp"
+            android:text="@string/address"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            tools:ignore="LabelFor" />
+
+        <LinearLayout
+            android:id="@+id/lin5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addressET"
+            android:layout_marginBottom="@dimen/dim_8dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lin51"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/dim_2dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edit_text"
+                android:paddingEnd="@dimen/dim_2dp"
+                android:paddingStart="@dimen/dim_2dp">
+
+                <Spinner
+                    android:id="@+id/bedroom_spinner"
+                    style="@style/Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/white"
+                    tools:ignore="UnusedAttribute" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lin52"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dim_2dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edit_text"
+                android:paddingEnd="@dimen/dim_2dp"
+                android:paddingStart="@dimen/dim_2dp">
+
+                <Spinner
+                    android:id="@+id/bathroom_spinner"
+                    style="@style/Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/white"
+                    tools:ignore="UnusedAttribute" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lin5"
+            android:layout_marginBottom="@dimen/dim_8dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lin61"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/dim_2dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edit_text"
+                android:paddingEnd="@dimen/dim_2dp"
+                android:paddingStart="@dimen/dim_2dp">
+
+                <Spinner
+                    android:id="@+id/garage_spinner"
+                    style="@style/Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/white"
+                    tools:ignore="UnusedAttribute" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/areaET"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_2dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edit_text"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:paddingEnd="@dimen/dim_8dp"
+                android:paddingStart="@dimen/dim_8dp"
+                android:text="@string/area"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                tools:ignore="LabelFor" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lin6"
+            android:background="@drawable/bg_edit_text"
+            android:paddingStart="@dimen/dim_8dp"
+            android:paddingEnd="@dimen/dim_8dp"
+            android:layout_marginBottom="@dimen/dim_8dp">
+        <SeekBar
+            android:id="@+id/rangeBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:min="10"
+            android:max="20000"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/submitBtn"
+            style="?buttonBarButtonStyle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lin7"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/dim_8dp"
+            android:background="@drawable/bg_round_rect"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</ScrollView>

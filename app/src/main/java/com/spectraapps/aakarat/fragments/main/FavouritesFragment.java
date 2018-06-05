@@ -13,38 +13,40 @@ import android.view.ViewGroup;
 
 import com.spectraapps.aakarat.MainActivity;
 import com.spectraapps.aakarat.R;
-import com.spectraapps.aakarat.adapter.HomeAdapter;
-import com.spectraapps.aakarat.adapter.ProductsAdapter;
+import com.spectraapps.aakarat.adapter.FavouriteAdapter;
 import com.spectraapps.aakarat.helper.BaseBackPressedListener;
 import com.spectraapps.aakarat.interfaces.MainViewsCallBack;
-import com.spectraapps.aakarat.model.ProductsModel;
+import com.spectraapps.aakarat.model.FavModel;
+import com.spectraapps.aakarat.model.HomeModel;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
-
-public class ProductsFragment extends Fragment {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class FavouritesFragment extends Fragment {
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
-    ProductsAdapter productsAdapter;
-    ArrayList<ProductsModel> mDataList;
+    private ArrayList<FavModel> mDataList;
+    private FavouriteAdapter favAdapter;
     private MainViewsCallBack mMainViewsCallBack;
 
-    public ProductsFragment() {
+
+    public FavouritesFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_products, container, false);
-        ButterKnife.bind(this, rootView);
+        View rootView = inflater.inflate(R.layout.fragment_favourites, container, false);
+        ButterKnife.bind(this,rootView);
         initUI(rootView);
-
         return rootView;
     }
 
@@ -55,35 +57,30 @@ public class ProductsFragment extends Fragment {
 
     private void initRecyclerView() {
         if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
+            recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         } else {
-            recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
+            recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         }
     }
 
     private void initAdapter() {
         mDataList = new ArrayList<>();
-        // Integer[] images = {R.drawable.place_holder};
-        ProductsModel th;
+        FavModel th;
         for (int i = 0; i < 6; i++) {
-            if (i > 3)
-                th = new ProductsModel(getString(R.string.for_rent), R.drawable.housepng);
-            else
-                th = new ProductsModel(getString(R.string.for_sale), R.drawable.housepng);
+                th = new FavModel("Fav"+i, R.drawable.housepng);
             mDataList.add(i, th);
         }
 
-        productsAdapter = new ProductsAdapter(getActivity().getApplicationContext(), mDataList,
-                new ProductsAdapter.ListAllListeners() {
+        favAdapter = new FavouriteAdapter(getActivity().getApplicationContext(), mDataList,
+                new FavouriteAdapter.ListAllListeners() {
                     @Override
-                    public void onItemViewClick(ProductsModel productsModel, int adapterPosition) {
-                        getFragmentManager().beginTransaction()
-                                .replace(R.id.main_frameLayout,new ProductDetailFragment()).commit();
+                    public void onItemViewClick(FavModel favModel, int adapterPosition) {
+//                        getFragmentManager().beginTransaction().replace(R.id.main_frameLayout,new ProductsFragment()).commit();
                     }
                 });
 
-        recyclerView.setAdapter(productsAdapter);
-        productsAdapter.notifyDataSetChanged();
+        recyclerView.setAdapter(favAdapter);
+        favAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -102,7 +99,7 @@ public class ProductsFragment extends Fragment {
         super.onResume();
         mMainViewsCallBack.fabVisibility(false);
         mMainViewsCallBack.toolbarFilterBtn(false);
-        mMainViewsCallBack.toolbarTitle(getString(R.string.home));
+        mMainViewsCallBack.toolbarTitle(getString(R.string.my_favourite));
     }
 
     private void fireBackButtonEvent() {
@@ -111,7 +108,8 @@ public class ProductsFragment extends Fragment {
                 @Override
                 public void onBackPressed() {
                     getFragmentManager().beginTransaction()
-                            .replace(R.id.main_frameLayout,new HomeFragment()).commit();
+                            .replace(R.id.main_frameLayout, new HomeFragment())
+                            .commit();
                 }
             });
         } catch (Exception exc) {

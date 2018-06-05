@@ -46,4 +46,12 @@ dependencies {
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
     //TabTargetView
     implementation 'com.getkeepsafe.taptargetview:taptargetview:1.11.0'
+    //popup layout search
+    implementation 'com.github.michaelye.easydialog:easydialog:1.4'
+    //indicator
+    implementation 'me.relex:circleindicator:1.2.2@aar'
+    //range bar
+    implementation 'org.florescu.android.rangeseekbar:rangeseekbar-library:0.3.0'
+    implementation 'org.florescu.android.rangeseekbar:rangeseekbar-library:0.4.0-SNAPSHOT'
+
 }
