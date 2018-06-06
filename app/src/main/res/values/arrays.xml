@@ -18,5 +18,64 @@
         <item>966</item> <!--saudi-->
         <item>974</item> <!--qatar-->
     </string-array>
+    <string-array name="countries">
+        <item>@string/country</item> <!--egypt-->
+        <item>Egypt</item>
+        <item>Saudi</item>
+        <item>Qatar</item>
+    </string-array>
 
+    <string-array name="city">
+        <item>@string/city</item>
+        <item>cairo</item>
+        <item>jaddah</item>
+        <item>new york</item>
+    </string-array>
+
+    <string-array name="type">
+        <item>@string/for_rent</item>
+        <item>@string/for_sale</item>
+    </string-array>
+    <string-array name="distinct">
+        <item>@string/distinct</item>
+        <item>@string/apartment</item>
+        <item>@string/villa</item>
+        <item>@string/house</item>
+        <item>@string/resturant</item>
+        <item>@string/warehouse</item>
+        <item>@string/farms</item>
+    </string-array>
+    <string-array name="dept">
+    <item>@string/distinct</item>
+    <item>@string/apartment</item>
+    <item>@string/villa</item>
+    <item>@string/house</item>
+    <item>@string/resturant</item>
+    <item>@string/warehouse</item>
+    <item>@string/farms</item>
+    </string-array>
+    <string-array name="garage">
+        <item>@string/garage_qm</item>
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string-array name="bathroom">
+        <item>@string/bathroom_qm</item>
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+
+    <string-array name="bedroom">
+        <item>@string/bedroom_qm</item>
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+
+    <string name="country">Country</string>
+    <string name="city">City</string>
+    <string name="type">Type</string>
+    <string name="distinct">Distinct</string>
+    <string name="garage_qm">Garage?</string>
+    <string name="bathroom_qm">Bathroom?</string>
+    <string name="bedroom_qm">Bedroom</string>
 </resources>

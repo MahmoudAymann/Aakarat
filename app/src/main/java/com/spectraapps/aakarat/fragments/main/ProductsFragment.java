@@ -7,10 +7,16 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
+import com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener;
+import com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar;
+import com.michael.easydialog.EasyDialog;
 import com.spectraapps.aakarat.MainActivity;
 import com.spectraapps.aakarat.R;
 import com.spectraapps.aakarat.adapter.HomeAdapter;
@@ -32,6 +38,9 @@ public class ProductsFragment extends Fragment {
     ProductsAdapter productsAdapter;
     ArrayList<ProductsModel> mDataList;
     private MainViewsCallBack mMainViewsCallBack;
+    CrystalRangeSeekbar rangeSeekbar;
+    TextView minTV,maxTV,minTV2,maxTV2;
+    private CrystalRangeSeekbar rangeSeekbar2;
 
     public ProductsFragment() {
         // Required empty public constructor
@@ -51,6 +60,13 @@ public class ProductsFragment extends Fragment {
     private void initUI(View rootView) {
         initRecyclerView();
         initAdapter();
+        ImageButton imageButton = getActivity().findViewById(R.id.toolbar_filter_button);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showPopUp();
+            }
+        });
     }
 
     private void initRecyclerView() {
@@ -59,6 +75,53 @@ public class ProductsFragment extends Fragment {
         } else {
             recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
         }
+    }
+    private void showPopUp() {
+        View popupView = View.inflate(new ContextThemeWrapper(
+                getActivity().getApplicationContext(),
+                R.style.AppTheme), R.layout.popup_filter_layout,null);
+        final EasyDialog easyDialog = new EasyDialog(getActivity())
+                .setLayout(popupView)
+                .setLocationByAttachedView(getActivity().findViewById(R.id.toolbar_filter_button))
+                .setBackgroundColor(getResources().getColor(R.color.grey_static))
+                .setGravity(EasyDialog.GRAVITY_BOTTOM)
+                .setAnimationTranslationShow(EasyDialog.DIRECTION_X, 600, -600, 100, -50, 50, 0)
+                .setAnimationAlphaShow(100, 0.3f, 1.0f)
+                .setAnimationTranslationDismiss(EasyDialog.DIRECTION_X, 300, -50, 500)
+                .setAnimationAlphaDismiss(100, 1.0f, 0.0f)
+                .setTouchOutsideDismiss(true)
+                .setMatchParent(true)
+                .setMarginLeftAndRight(30, 30)
+                .show();
+        initPopupUI(popupView, easyDialog);
+    }
+    private void initRangeBar(View popupView) {
+        rangeSeekbar = popupView.findViewById(R.id.rangeSeekbar);
+        minTV = popupView.findViewById(R.id.textMin);
+        maxTV = popupView.findViewById(R.id.textMax);
+        rangeSeekbar.setOnRangeSeekbarChangeListener(new OnRangeSeekbarChangeListener() {
+            @Override
+            public void valueChanged(Number minValue, Number maxValue) {
+                minTV.setText(String.valueOf(minValue));
+                maxTV.setText(String.valueOf(maxValue));
+            }
+        });
+    }
+    private void initRangeBar2(View popupView) {
+        rangeSeekbar2 = popupView.findViewById(R.id.rangeSeekbar2);
+        minTV2 = popupView.findViewById(R.id.textMin2);
+        maxTV2 = popupView.findViewById(R.id.textMax2);
+        rangeSeekbar2.setOnRangeSeekbarChangeListener(new OnRangeSeekbarChangeListener() {
+            @Override
+            public void valueChanged(Number minValue, Number maxValue) {
+                minTV2.setText(String.valueOf(minValue));
+                maxTV2.setText(String.valueOf(maxValue));
+            }
+        });
+    }
+    private void initPopupUI(View popupView, EasyDialog easyDialog) {
+        initRangeBar(popupView);
+        initRangeBar2(popupView);
     }
 
     private void initAdapter() {
@@ -101,8 +164,8 @@ public class ProductsFragment extends Fragment {
     public void onResume() {
         super.onResume();
         mMainViewsCallBack.fabVisibility(false);
-        mMainViewsCallBack.toolbarFilterBtn(false);
-        mMainViewsCallBack.toolbarTitle(getString(R.string.home));
+        mMainViewsCallBack.toolbarFilterBtn(true);
+        mMainViewsCallBack.toolbarTitle(getString(R.string.products));
     }
 
     private void fireBackButtonEvent() {

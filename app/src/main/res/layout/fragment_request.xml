@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.main.AddProductFragment">
 
     <RelativeLayout
@@ -192,28 +192,64 @@
                 android:maxLines="1"
                 android:paddingEnd="@dimen/dim_8dp"
                 android:paddingStart="@dimen/dim_8dp"
-                android:text="@string/area"
+                android:hint="@string/area"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 tools:ignore="LabelFor" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/lin7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/lin6"
-            android:background="@drawable/bg_edit_text"
-            android:paddingStart="@dimen/dim_8dp"
-            android:paddingEnd="@dimen/dim_8dp"
-            android:layout_marginBottom="@dimen/dim_8dp">
-        <SeekBar
-            android:id="@+id/rangeBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:min="10"
-            android:max="20000"/>
-        </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/lin7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lin6"
+                android:layout_marginBottom="@dimen/dim_8dp"
+                android:background="@drawable/bg_edit_text"
+                android:gravity="center"
+                android:paddingEnd="@dimen/dim_8dp"
+                android:paddingStart="@dimen/dim_8dp"
+                android:paddingTop="@dimen/dim_8dp">
+
+                <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+                    android:id="@+id/rangeSeekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:bar_color="@color/colorPrimaryDark"
+                    app:bar_highlight_color="@color/white"
+                    app:corner_radius="10"
+                    app:data_type="_integer"
+                    app:left_thumb_color="@color/colorAccent"
+                    app:left_thumb_color_pressed="@color/grey_static"
+                    app:right_thumb_color="@color/colorAccent"
+                    app:right_thumb_color_pressed="@color/grey_static"
+                    app:max_value="150"
+                    app:min_value="50"
+                    app:steps="10"/>
+
+                <TextView
+                    android:id="@+id/textMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rangeSeekbar"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/textMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@id/rangeSeekbar"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
         <Button
             android:id="@+id/submitBtn"
             style="?buttonBarButtonStyle"
@@ -225,7 +261,8 @@
             android:background="@drawable/bg_round_rect"
             android:text="@string/submit"
             android:textColor="@color/white"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/dim_16dp"/>
 
     </RelativeLayout>
 

@@ -52,6 +52,6 @@ dependencies {
     implementation 'me.relex:circleindicator:1.2.2@aar'
     //range bar
     implementation 'org.florescu.android.rangeseekbar:rangeseekbar-library:0.3.0'
-    implementation 'org.florescu.android.rangeseekbar:rangeseekbar-library:0.4.0-SNAPSHOT'
+    implementation 'com.crystal:crystalrangeseekbar:1.1.3'
 
 }

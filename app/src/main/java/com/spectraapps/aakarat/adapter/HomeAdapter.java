@@ -71,7 +71,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
         });
     }//end onBindViewHolder()
 
-
     public interface ListAllListeners {
         void onItemViewClick(HomeModel homeModel, int adapterPosition);
     }

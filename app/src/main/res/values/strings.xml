@@ -68,5 +68,8 @@
     <string name="map">Map</string>
     <string name="description">Description</string>
     <string name="agree_the_privacy_policy">agree the privacy policy</string>
+    <string name="garage_availability_">Garage Availability:</string>
+    <string name="update">Update</string>
+    <string name="products">Products</string>
 
 </resources>
